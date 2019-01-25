@@ -18,8 +18,9 @@ public class StartGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && !player.activeInHierarchy){
+        if(Input.GetKeyDown(KeyCode.Space) && !player.activeInHierarchy || Input.touchCount > 0 && !player.activeInHierarchy)
+        {
             player.SetActive(true);
-        }   
+        }
     }
 }
